@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main>
+      <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
