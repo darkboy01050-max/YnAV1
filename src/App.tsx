@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="pt-20">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
