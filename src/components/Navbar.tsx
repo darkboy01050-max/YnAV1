@@ -8,6 +8,8 @@ function Navbar() {
 
   const navLinks = [
     { path: '/', label: 'Home' },
+    { path: '/services', label: 'Services' },
+    { path: '/about', label: 'About Us' },
   ];
 
   const scrollToContact = () => {
