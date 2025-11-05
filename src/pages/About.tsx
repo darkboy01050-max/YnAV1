@@ -3,6 +3,8 @@ import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
+import youssefImg from './images/youssef.jpg';
+import ahmedImg from './images/ahmed.jpg';
 
 const values = [
   {
@@ -27,13 +29,13 @@ const team = [
     name: 'Youssef Hatem',
     role: 'CEO & CoFounder',
     description: 'Youssef drives the company\'s vision, strategy, and growth.',
-    image: '/images/youssef.jpg',
+    image: youssefImg,
   },
   {
     name: 'Ahmed Allam',
     role: 'CTO & CoFounder',
     description: 'Ahmed leads the engineering and innovation teams, shaping the company\'s technology vision.',
-    image: '/images/ahmed.jpg',
+    image: ahmedImg,
   },
 ];
 
