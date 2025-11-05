@@ -27,13 +27,13 @@ const team = [
     name: 'Youssef Hatem',
     role: 'CEO & CoFounder',
     description: 'Youssef drives the company\'s vision, strategy, and growth.',
-    image: 'images/youssef.jpg',
+    image: '/images/youssef.jpg',
   },
   {
     name: 'Ahmed Allam',
     role: 'CTO & CoFounder',
     description: 'Ahmed leads the engineering and innovation teams, shaping the company\'s technology vision.',
-    image: 'images/ahmed.jpg',
+    image: '/images/ahmed.jpg',
   },
 ];
 
