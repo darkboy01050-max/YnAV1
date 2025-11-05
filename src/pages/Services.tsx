@@ -1,4 +1,5 @@
 import { Monitor, Smartphone, Brain, Tag } from 'lucide-react';
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 
@@ -26,6 +27,8 @@ const servicesData = [
 ];
 
 function Services() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-slate-900">
       <PageHero
@@ -41,18 +44,23 @@ function Services() {
               return (
                 <div
                   key={index}
-                  className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col transition-all duration-300 hover:border-emerald-600/50 hover:shadow-lg hover:shadow-emerald-600/20"
+                  className="slide-in-cards bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col transition-all duration-500 hover:border-emerald-600/50 hover:shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 group"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
                   <div className="flex items-start mb-6">
-                    <Icon className="w-12 h-12 text-emerald-600 flex-shrink-0" />
+                    <div className={`transition-all duration-500 ${hoveredIndex === index ? 'scale-125' : 'scale-100'}`}>
+                      <Icon className="w-12 h-12 text-emerald-600 flex-shrink-0 group-hover:text-emerald-500" />
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">
+                  <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 mb-6 flex-grow">
+                  <p className="text-gray-300 mb-6 flex-grow transition-colors duration-300 group-hover:text-white">
                     {service.description}
                   </p>
-                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit">
+                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit transform hover:scale-110 active:scale-95">
                     Learn More
                   </button>
                 </div>
