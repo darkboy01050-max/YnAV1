@@ -1,7 +1,7 @@
 import { Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://www.instagram.com/yna.services'', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/yna.services', label: 'Instagram' },
   { icon: Facebook, href: 'https://www.facebook.com/yna.service', label: 'Facebook' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/y-a-services', label: 'LinkedIn' },
   { icon: MessageCircle, href: 'https://wa.me/+201553514081', label: 'WhatsApp' },
