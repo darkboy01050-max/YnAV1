@@ -27,11 +27,13 @@ const team = [
     name: 'Youssef Hatem',
     role: 'CEO & CoFounder',
     description: 'Youssef drives the company\'s vision, strategy, and growth.',
+    image: '/youssef.jpg',
   },
   {
     name: 'Ahmed Allam',
     role: 'CTO & CoFounder',
     description: 'Ahmed leads the engineering and innovation teams, shaping the company\'s technology vision.',
+    image: '/ahmed.jpg',
   },
 ];
 
@@ -109,8 +111,12 @@ function About() {
                 onMouseLeave={() => setHoveredMember(null)}
               >
                 <div className="flex justify-center mb-6">
-                  <div className={`w-24 h-24 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center transition-all duration-500 ${hoveredMember === index ? 'scale-110 shadow-lg shadow-emerald-600/50' : 'scale-100'}`}>
-                    <User className="w-12 h-12 text-white" />
+                  <div className={`w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-700 flex items-center justify-center transition-all duration-500 ${hoveredMember === index ? 'scale-110 shadow-lg shadow-emerald-600/50' : 'scale-100'}`}>
+                    {member.image ? (
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <User className="w-12 h-12 text-white" />
+                    )}
                   </div>
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
