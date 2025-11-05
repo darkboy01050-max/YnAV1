@@ -29,7 +29,7 @@ const team = [
     description: 'Youssef drives the company\'s vision, strategy, and growth.',
   },
   {
-    name: 'Ahmed Alam',
+    name: 'Ahmed Allam',
     role: 'CTO & CoFounder',
     description: 'Ahmed leads the engineering and innovation teams, shaping the company\'s technology vision.',
   },
