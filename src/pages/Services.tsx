@@ -1,8 +1,9 @@
-import { Monitor, Smartphone, Brain, Tag } from 'lucide-react';
+import { Monitor, Smartphone, Brain, Tag, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
+import BlurReveal from '../components/BlurReveal';
 
 const servicesData = [
   {
@@ -43,13 +44,12 @@ function Services() {
             {servicesData.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div
-                  key={index}
-                  className="slide-in-cards bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col transition-all duration-500 hover:border-emerald-600/50 hover:shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 group"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
+                <BlurReveal key={index} delay={index * 100}>
+                  <div
+                    className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col transition-all duration-500 hover:border-emerald-600/50 hover:shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 group"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
                   <div className="flex items-start mb-6">
                     <div className={`transition-all duration-500 ${hoveredIndex === index ? 'scale-125' : 'scale-100'}`}>
                       <Icon className="w-12 h-12 text-emerald-600 flex-shrink-0 group-hover:text-emerald-500" />
@@ -64,33 +64,46 @@ function Services() {
                   {service.title === 'Web Development' ? (
                     <Link
                       to="/services/web-development"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                      className="btn-with-arrow inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit active:scale-95"
                     >
-                      Learn More
+                      <span>Learn More</span>
+                      <span className="arrow-icon">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   ) : service.title === 'App Development' ? (
                     <Link
                       to="/services/app-development"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                      className="btn-with-arrow inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit active:scale-95"
                     >
-                      Learn More
+                      <span>Learn More</span>
+                      <span className="arrow-icon">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   ) : service.title === 'AI Integration' ? (
                     <Link
                       to="/services/ai-integration"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                      className="btn-with-arrow inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit active:scale-95"
                     >
-                      Learn More
+                      <span>Learn More</span>
+                      <span className="arrow-icon">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   ) : (
                     <Link
                       to="/services/branding"
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                      className="btn-with-arrow inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit active:scale-95"
                     >
-                      Learn More
+                      <span>Learn More</span>
+                      <span className="arrow-icon">
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </Link>
                   )}
-                </div>
+                  </div>
+                </BlurReveal>
               );
             })}
           </div>

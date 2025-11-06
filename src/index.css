@@ -170,3 +170,79 @@
 .float {
   animation: float 3s ease-in-out infinite;
 }
+
+@keyframes blurReveal {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
+  }
+}
+
+.blur-reveal {
+  opacity: 0;
+  animation: blurReveal 0.6s ease-in-out forwards;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #10b981;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-with-arrow {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-with-arrow .arrow-icon {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+
+.btn-with-arrow:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+  width: 20px;
+  margin-left: 8px;
+}
+
+.btn-with-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.neon-glow-focus:focus {
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3), 0 0 15px rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+}
+
+.neon-glow-hover:hover {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}

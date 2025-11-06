@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import BlurReveal from '../components/BlurReveal';
 import projectImage from './images/image.png';
 
 interface Project {
@@ -41,13 +42,12 @@ function Portfolio() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="slide-in-cards bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group"
-                style={{ animationDelay: `${index * 0.15}s` }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
+              <BlurReveal key={project.id} delay={index * 100}>
+                <div
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -88,14 +88,17 @@ function Portfolio() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-110 active:scale-95"
+                    className="btn-with-arrow inline-flex items-center bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 active:scale-95"
                   >
-                    View Live Demo
-                    <ExternalLink className="w-4 h-4" />
+                    <span>View Live Demo</span>
+                    <span className="arrow-icon">
+                      <ExternalLink className="w-4 h-4" />
+                    </span>
                   </a>
                 </div>
               </div>
-            ))}
+            </BlurReveal>
+          ))}
           </div>
         </div>
       </section>

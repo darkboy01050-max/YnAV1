@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import BlurReveal from '../components/BlurReveal';
 
 interface BlogPost {
   id: number;
@@ -77,13 +79,12 @@ function Blog() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {blogPosts.map((post, index) => (
-              <div
-                key={post.id}
-                className="slide-in-cards bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group flex flex-col"
-                style={{ animationDelay: `${index * 0.15}s` }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
+              <BlurReveal key={post.id} delay={index * 100}>
+                <div
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group flex flex-col"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                 <div className="relative overflow-hidden h-64">
                   <img
                     src={post.image}
@@ -108,14 +109,17 @@ function Blog() {
 
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-400 font-semibold transition-all duration-300 transform hover:translate-x-1 w-fit"
+                    className="btn-with-arrow inline-flex items-center text-emerald-600 hover:text-emerald-400 font-semibold transition-all duration-300 w-fit"
                   >
-                    Read More
-                    <span className="text-lg">→</span>
+                    <span>Read More</span>
+                    <span className="arrow-icon">
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
                   </Link>
                 </div>
               </div>
-            ))}
+            </BlurReveal>
+          ))}
           </div>
         </div>
       </section>

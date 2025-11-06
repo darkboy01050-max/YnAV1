@@ -2,6 +2,7 @@ import { Code2, ShoppingCart, Building2, Zap, BookOpen, Cpu, Rocket, Database, L
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import BlurReveal from '../components/BlurReveal';
 
 const webSolutions = [
   {
@@ -78,19 +79,21 @@ function WebDevelopmentPage() {
 
       <section className="py-20 px-4 bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
-            Our Web Solutions
-          </h2>
-          <p className="text-center text-gray-400 mb-16 text-lg max-w-2xl mx-auto">
-            We provide a complete range of web services tailored to your specific needs.
-          </p>
+          <BlurReveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-4">
+              Our Web Solutions
+            </h2>
+            <p className="text-center text-gray-400 mb-16 text-lg max-w-2xl mx-auto">
+              We provide a complete range of web services tailored to your specific needs.
+            </p>
+          </BlurReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {webSolutions.map((solution, index) => (
-              <div
-                key={index}
-                className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 text-center transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group"
-              >
+              <BlurReveal key={index} delay={index * 100}>
+                <div
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 text-center transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group"
+                >
                 <div className="flex justify-center mb-6">
                   <div className="bg-emerald-600/20 rounded-full p-6 border border-emerald-600/30 group-hover:bg-emerald-600/30 transition-all duration-300">
                     <solution.icon className="w-12 h-12 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
@@ -102,7 +105,8 @@ function WebDevelopmentPage() {
                 <p className="text-gray-400 leading-relaxed">
                   {solution.description}
                 </p>
-              </div>
+                </div>
+              </BlurReveal>
             ))}
           </div>
         </div>
@@ -110,13 +114,16 @@ function WebDevelopmentPage() {
 
       <section className="py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Our Development Process
-          </h2>
+          <BlurReveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+              Our Development Process
+            </h2>
+          </BlurReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {processSteps.map((stepItem, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <BlurReveal key={index} delay={index * 150}>
+                <div className="flex flex-col items-center">
                 <div className="bg-emerald-600 rounded-full w-16 h-16 flex items-center justify-center mb-6 text-white font-bold text-2xl">
                   {stepItem.step}
                 </div>
@@ -126,7 +133,8 @@ function WebDevelopmentPage() {
                 <p className="text-gray-400 text-center leading-relaxed">
                   {stepItem.description}
                 </p>
-              </div>
+                </div>
+              </BlurReveal>
             ))}
           </div>
 
@@ -140,11 +148,14 @@ function WebDevelopmentPage() {
 
       <section className="py-20 px-4 bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Technologies We Use
-          </h2>
+          <BlurReveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+              Technologies We Use
+            </h2>
+          </BlurReveal>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <BlurReveal delay={100}>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {technologies.map((tech, index) => {
               const Icon = tech.icon;
               return (
@@ -158,7 +169,8 @@ function WebDevelopmentPage() {
                 </div>
               );
             })}
-          </div>
+            </div>
+          </BlurReveal>
         </div>
       </section>
 

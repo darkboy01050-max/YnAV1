@@ -36,7 +36,7 @@ function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-lg transition-colors duration-300 ${
+                className={`nav-link text-lg transition-colors duration-300 ${
                   location.pathname === link.path
                     ? 'text-emerald-600'
                     : 'text-white hover:text-emerald-600'

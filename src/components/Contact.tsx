@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import BlurReveal from './BlurReveal';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -30,10 +31,13 @@ function Contact() {
   return (
     <section id="contact" className="py-20 px-4 bg-slate-900">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-          Contact Us
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <BlurReveal>
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Contact Us
+          </h2>
+        </BlurReveal>
+        <BlurReveal delay={100}>
+          <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <input
               type="text"
@@ -42,7 +46,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="Name"
               required
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all duration-300"
+              className="neon-glow-focus w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none transition-all duration-300"
             />
           </div>
           <div>
@@ -53,7 +57,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="Email"
               required
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all duration-300"
+              className="neon-glow-focus w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none transition-all duration-300"
             />
           </div>
           <div>
@@ -64,7 +68,7 @@ function Contact() {
               placeholder="Message"
               required
               rows={6}
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all duration-300 resize-none"
+              className="neon-glow-focus w-full bg-slate-800 border border-slate-700 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none transition-all duration-300 resize-none"
             />
           </div>
           <button
@@ -73,7 +77,8 @@ function Contact() {
           >
             {submitted ? 'Message Sent!' : 'Send Message'}
           </button>
-        </form>
+          </form>
+        </BlurReveal>
       </div>
     </section>
   );
