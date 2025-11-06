@@ -1,5 +1,6 @@
 import { Monitor, Smartphone, Brain, Tag } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 
@@ -60,9 +61,18 @@ function Services() {
                   <p className="text-gray-300 mb-6 flex-grow transition-colors duration-300 group-hover:text-white">
                     {service.description}
                   </p>
-                  <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit transform hover:scale-110 active:scale-95">
-                    Learn More
-                  </button>
+                  {service.title === 'Web Development' ? (
+                    <Link
+                      to="/services/web-development"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                    >
+                      Learn More
+                    </Link>
+                  ) : (
+                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit transform hover:scale-110 active:scale-95">
+                      Learn More
+                    </button>
+                  )}
                 </div>
               );
             })}
