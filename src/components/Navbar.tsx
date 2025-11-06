@@ -10,6 +10,7 @@ function Navbar() {
     { path: '/', label: 'Home' },
     { path: '/services', label: 'Services' },
     { path: '/portfolio', label: 'Portfolio' },
+    { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About Us' },
   ];
 
