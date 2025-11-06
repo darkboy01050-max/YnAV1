@@ -6,6 +6,7 @@ import About from './pages/About';
 import WebDevelopmentPage from './pages/WebDevelopmentPage';
 import AppDevelopmentPage from './pages/AppDevelopmentPage';
 import AIIntegrationPage from './pages/AIIntegrationPage';
+import BrandingPage from './pages/BrandingPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/services/web-development" element={<WebDevelopmentPage />} />
           <Route path="/services/app-development" element={<AppDevelopmentPage />} />
           <Route path="/services/ai-integration" element={<AIIntegrationPage />} />
+          <Route path="/services/branding" element={<BrandingPage />} />
         </Routes>
       </main>
     </Router>
