@@ -23,7 +23,7 @@ const projects: Project[] = [
     image: projectImage,
     challenge: 'The client needed an attractive and engaging e-commerce website to draw in customers and drive product sales.',
     solution: 'We developed a fast, modern website using Flutter Web, which included a fully integrated blog section to boost content marketing and customer engagement.',
-    liveUrl: 'https://my-business-rhk2c7bqc-what-ever-it-takes-projects-54388791.vercel.app/',
+    liveUrl: 'https://what-ever-it-takes.vercel.app/',
   },
 ];
 
