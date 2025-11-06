@@ -19,7 +19,7 @@ const blogPosts: BlogPost[] = [
     title: 'Why We Use Flutter for Web (And Why You Should Care)',
     category: 'Web Development',
     excerpt: 'Flutter isn\'t just for mobile. Discover how we leverage its performance and flexibility to build fast, beautiful, and consistent web experiences for our clients.',
-    image: 'https://images.pexels.com/photos/3182806/pexels-photo-3182806.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     slug: 'flutter-for-web',
   },
   {
@@ -27,7 +27,7 @@ const blogPosts: BlogPost[] = [
     title: 'Cross-platform vs. Native: Which is Right for Your App?',
     category: 'App Development',
     excerpt: 'A deep dive into the pros and cons of Flutter/React Native vs. native Kotlin. We help you decide the best strategy for your budget and performance needs.',
-    image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: 'https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     slug: 'cross-platform-vs-native',
   },
   {
@@ -35,7 +35,7 @@ const blogPosts: BlogPost[] = [
     title: 'How AI Chatbots Can 10x Your Customer Support',
     category: 'AI Integration',
     excerpt: 'Stop wasting time on repetitive questions. Learn how integrating an AI chatbot can automate your support, boost sales, and keep customers happy 24/7.',
-    image: 'https://images.pexels.com/photos/8566886/pexels-photo-8566886.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     slug: 'ai-chatbots',
   },
   {
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
     title: 'Why Your "Branding" is More Than Just a Logo',
     category: 'Branding',
     excerpt: 'A great logo is just the start. We explore how a complete visual identity—from colors to typography—builds trust and makes you stand out from the competition.',
-    image: 'https://images.pexels.com/photos/3588365/pexels-photo-3588365.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+    image: 'https://images.pexels.com/photos/3183133/pexels-photo-3183133.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     slug: 'branding-vs-logo',
   },
 ];

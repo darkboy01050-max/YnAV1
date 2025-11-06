@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
+import BlogArticle from './pages/BlogArticle';
 import WebDevelopmentPage from './pages/WebDevelopmentPage';
 import AppDevelopmentPage from './pages/AppDevelopmentPage';
 import AIIntegrationPage from './pages/AIIntegrationPage';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogArticle />} />
           <Route path="/services/web-development" element={<WebDevelopmentPage />} />
           <Route path="/services/app-development" element={<AppDevelopmentPage />} />
           <Route path="/services/ai-integration" element={<AIIntegrationPage />} />
