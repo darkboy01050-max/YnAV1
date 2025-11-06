@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Share2, X, Linkedin, Facebook, MessageCircle } from 'lucide-react';
+import { ArrowRight, Share2, X, Linkedin, Facebook, MessageCircle, Copy, Check } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -57,6 +57,7 @@ interface ShareMenuPosition {
 
 function Blog() {
   const [shareMenu, setShareMenu] = useState<ShareMenuPosition>({ postId: 0, isOpen: false });
+  const [copiedId, setCopiedId] = useState<number | null>(null);
 
   const toggleShareMenu = (postId: number) => {
     setShareMenu((prev) =>
@@ -81,6 +82,13 @@ function Blog() {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
     };
+  };
+
+  const copyToClipboard = (postId: number, slug: string) => {
+    const url = getShareUrl(slug);
+    navigator.clipboard.writeText(url);
+    setCopiedId(postId);
+    setTimeout(() => setCopiedId(null), 2000);
   };
 
   return (
@@ -143,6 +151,22 @@ function Blog() {
 
                             {isShareOpen && (
                               <div className="absolute bottom-full right-0 mb-2 bg-slate-700 border border-slate-600 rounded-lg shadow-xl overflow-hidden z-50 min-w-[140px]">
+                                <button
+                                  onClick={() => copyToClipboard(post.id, post.slug)}
+                                  className="w-full flex items-center gap-2 px-4 py-2 hover:bg-slate-600 transition-colors duration-200 text-gray-200 hover:text-emerald-400"
+                                >
+                                  {copiedId === post.id ? (
+                                    <>
+                                      <Check className="w-4 h-4" />
+                                      <span className="text-sm">Copied!</span>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <Copy className="w-4 h-4" />
+                                      <span className="text-sm">Copy Link</span>
+                                    </>
+                                  )}
+                                </button>
                                 <a
                                   href={links.twitter}
                                   target="_blank"
