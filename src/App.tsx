@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import WebDevelopmentPage from './pages/WebDevelopmentPage';
 import AppDevelopmentPage from './pages/AppDevelopmentPage';
+import AIIntegrationPage from './pages/AIIntegrationPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services/web-development" element={<WebDevelopmentPage />} />
           <Route path="/services/app-development" element={<AppDevelopmentPage />} />
+          <Route path="/services/ai-integration" element={<AIIntegrationPage />} />
         </Routes>
       </main>
     </Router>

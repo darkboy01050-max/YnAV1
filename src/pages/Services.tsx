@@ -75,6 +75,13 @@ function Services() {
                     >
                       Learn More
                     </Link>
+                  ) : service.title === 'AI Integration' ? (
+                    <Link
+                      to="/services/ai-integration"
+                      className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit block transform hover:scale-110 active:scale-95 text-center"
+                    >
+                      Learn More
+                    </Link>
                   ) : (
                     <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 w-fit transform hover:scale-110 active:scale-95">
                       Learn More
