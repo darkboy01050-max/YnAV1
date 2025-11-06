@@ -1,4 +1,5 @@
 import { Palette, PenTool, FileText, Wand2, Printer, BookMarked, Figma, Code2, Zap } from 'lucide-react';
+import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -68,6 +69,8 @@ const tools = [
 ];
 
 function BrandingPage() {
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen bg-slate-900">
       <PageHero
@@ -90,14 +93,16 @@ function BrandingPage() {
               return (
                 <div
                   key={index}
-                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 text-center"
+                  className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 text-center transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group"
+                  onMouseEnter={() => setHoveredService(index)}
+                  onMouseLeave={() => setHoveredService(null)}
                 >
                   <div className="flex justify-center mb-6">
-                    <div className="bg-emerald-600/20 rounded-full p-6 border border-emerald-600/30">
-                      <Icon className="w-12 h-12 text-emerald-600" />
+                    <div className="bg-emerald-600/20 rounded-full p-6 border border-emerald-600/30 group-hover:bg-emerald-600/30 transition-all duration-300">
+                      <Icon className="w-12 h-12 text-emerald-600 group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">
+                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
@@ -151,8 +156,8 @@ function BrandingPage() {
               const Icon = tool.icon;
               return (
                 <div key={index} className="flex flex-col items-center gap-3">
-                  <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-6">
-                    <Icon className="w-12 h-12 text-emerald-600" />
+                  <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group">
+                    <Icon className="w-12 h-12 text-emerald-600 group-hover:scale-125 transition-transform duration-300" />
                   </div>
                   <p className="text-gray-300 font-semibold text-center">
                     {tool.name}
