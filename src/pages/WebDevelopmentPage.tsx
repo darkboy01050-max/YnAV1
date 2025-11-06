@@ -1,4 +1,4 @@
-import { Code2, ShoppingCart, Building2, Zap, BookOpen, Cpu } from 'lucide-react';
+import { Code2, ShoppingCart, Building2, Zap, BookOpen, Cpu, Rocket, Database, Layers, Palette, Shield, Smartphone } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -60,12 +60,12 @@ const processSteps = [
 ];
 
 const technologies = [
-  { name: 'React', icon: '⚛️' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'TypeScript', icon: '🔵' },
-  { name: 'Tailwind CSS', icon: '🎨' },
-  { name: 'PostgreSQL', icon: '🐘' },
-  { name: 'Next.js', icon: '⬛' },
+  { name: 'React', icon: Rocket },
+  { name: 'Node.js', icon: Cpu },
+  { name: 'TypeScript', icon: Code2 },
+  { name: 'Tailwind CSS', icon: Palette },
+  { name: 'PostgreSQL', icon: Database },
+  { name: 'Next.js', icon: Layers },
 ];
 
 function WebDevelopmentPage() {
@@ -145,16 +145,19 @@ function WebDevelopmentPage() {
           </h2>
 
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {technologies.map((tech, index) => (
-              <div key={index} className="flex flex-col items-center gap-3">
-                <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-xl hover:shadow-emerald-600/30 hover:border-emerald-600/50">
-                  <span className="text-4xl">{tech.icon}</span>
+            {technologies.map((tech, index) => {
+              const Icon = tech.icon;
+              return (
+                <div key={index} className="flex flex-col items-center gap-3">
+                  <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:transform hover:scale-110 hover:shadow-xl hover:shadow-emerald-600/30 hover:border-emerald-600/50 group">
+                    <Icon className="w-12 h-12 text-emerald-600 group-hover:scale-125 transition-transform duration-300" />
+                  </div>
+                  <p className="text-gray-300 font-semibold text-center">
+                    {tech.name}
+                  </p>
                 </div>
-                <p className="text-gray-300 font-semibold text-center">
-                  {tech.name}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
