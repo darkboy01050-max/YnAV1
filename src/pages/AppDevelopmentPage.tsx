@@ -1,4 +1,4 @@
-import { Smartphone, Globe, Layers, Palette, Database, Wrench } from 'lucide-react';
+import { Smartphone, Globe, Layers, Palette, Database, Wrench, Zap, Code2, Server, Cloud, Wifi, Cpu } from 'lucide-react';
 import PageHero from '../components/PageHero';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -60,11 +60,11 @@ const processSteps = [
 ];
 
 const technologies = [
-  { name: 'Flutter', icon: Smartphone },
+  { name: 'Flutter', icon: Zap },
   { name: 'React Native', icon: Layers },
-  { name: 'Kotlin', icon: Smartphone },
-  { name: 'Firebase', icon: Database },
-  { name: 'Node.js', icon: Database },
+  { name: 'Kotlin', icon: Code2 },
+  { name: 'Firebase', icon: Cloud },
+  { name: 'Node.js', icon: Server },
   { name: 'Supabase', icon: Database },
 ];
 
