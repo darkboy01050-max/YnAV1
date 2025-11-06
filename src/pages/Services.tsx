@@ -40,13 +40,13 @@ function Services() {
 
       <section className="py-20 px-4 bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:grid-rows-[1fr_1fr]">
             {servicesData.map((service, index) => {
               const Icon = service.icon;
               return (
-                <BlurReveal key={index} delay={index * 100}>
+                <BlurReveal key={index} delay={index * 100} className="h-full">
                   <div
-                    className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col transition-all duration-500 hover:border-emerald-600/50 hover:shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 group"
+                    className="bg-slate-800 border border-slate-700 rounded-xl p-8 flex flex-col h-full transition-all duration-500 hover:border-emerald-600/50 hover:shadow-2xl hover:shadow-emerald-600/30 hover:scale-105 group"
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
